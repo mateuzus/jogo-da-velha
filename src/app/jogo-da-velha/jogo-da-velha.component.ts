@@ -19,7 +19,6 @@ export class JogoDaVelhaComponent implements OnInit {
    * 
    * @return boolean
    */
-
   get showInicio(): boolean{
     return this.jogoDaVelhaService.showInicio
   }
@@ -29,7 +28,6 @@ export class JogoDaVelhaComponent implements OnInit {
    * 
    * @return boolean
    */
-
   get showTabuleiro(): boolean {
     return this.jogoDaVelhaService.showTabuleiro
   }
@@ -59,5 +57,61 @@ export class JogoDaVelhaComponent implements OnInit {
    * @param number posY
    * @return void
    */
+  jogar(posX: number, posY: number): void{
+    this.jogoDaVelhaService.jogar(posX, posY)
+  }
+
+  /**
+   * Retorna se a peça X deve ser exibida para a coordenada informada
+   * 
+   * @param number posX
+   * @param number posY
+   * @return boolean
+   */
+  exibirX(posX: number, posY: number): boolean {
+    return this.jogoDaVelhaService.exibirX(posX, posY)
+  }
+
+  /**
+   * Retorna se a peça O deve ser exibida para a coordenada informada
+   * 
+   * @param number posX
+   * @param number posY
+   * @return boolean
+   */
+   exibirO(posX: number, posY: number): boolean {
+    return this.jogoDaVelhaService.exibirO(posX, posY)
+  }
+
+  /**
+   * Retorna se a marcaçã ode vit[oria deve ser exibida para a coordenada informada
+   * 
+   * @param number posX
+   * @param number posY
+   * @return boolean
+   */
+  exibirVitoria(posX: number, posY:number): boolean {
+    return this.jogoDaVelhaService.exibirVitoria(posX, posY)
+  }
+
+  /**
+   * Retorna o número do jogador a jogar
+   * 
+   * @return number
+   */
+
+  get jogador(): number {
+    return this.jogoDaVelhaService.jogador
+  }
+
+  /**
+   * Inicia novo jogo
+   * 
+   * @return void
+   */
+
+  novoJogo(): void {
+    this.jogoDaVelhaService.novoJogo()
+  }
 
 }
